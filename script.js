@@ -6,8 +6,12 @@ function generatePassword() {
    console.log(pwInput)
   var pwLength = parseInt(pwInput)
 
-  if (pwInput < 8 || pwInput > 128 || isNaN(pwInput) || isNaN(parseFloat(pwInput))) {
+  if (pwInput < 8 || pwInput > 128) {
     alert("Invalid Length")
+    return "";
+  } 
+  if (isNaN(pwInput)) {
+    alert("Not a Number");
     return "";
   }
   var pwWithNumbers = confirm("Would you like to include Number?");
@@ -25,12 +29,11 @@ function generatePassword() {
   var pwUpperCase = []
 
   var pwOptionSelection = []
-  
+
   for (var i = 0; i < pwLowerCase.length; i++) {
     // console.log(pwWithLowerCase[i])
     pwUpperCase[i] = pwLowerCase[i].toUpperCase()
   };
-
   if (pwWithNumbers) {
     pwOptionSelection = pwOptionSelection.concat(pwNumbers)
   }
@@ -54,15 +57,13 @@ function generatePassword() {
   }
   return finalPw;
 };
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log(password)
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
