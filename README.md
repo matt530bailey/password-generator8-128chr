@@ -9,4 +9,4 @@ This application prompts user to input between 8-128 Charaters. After initial pr
 https://matt530bailey.github.io/password-generator8-128chr/
 
 ## Screenshot
-![PW Generator Screenshot](/assets/DeployedPwGenerator.png "Deployed Website Password Generator")
+![PW Generator Screenshot](/Assets/DeployedPwGenerator.png "Deployed Website Password Generator")
